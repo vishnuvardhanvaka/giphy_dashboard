@@ -1,0 +1,76 @@
+{
+	"name": "giphy-dashboard-backend",
+	"private": true,
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "LICENSE",
+	"readme": "README.md",
+	"markdown": "github",
+	"publisher": "@pmfoysal",
+	"description": "A Modern Rich Featured Giphy Dashboard!",
+	"author": {
+		"name": "Foysal Ahmmed",
+		"email": "pmfoysal@gmail.com",
+		"url": "https://github.com/pmfoysal"
+	},
+	"categories": [
+		"Programming Languages",
+		"Data Science",
+		"Education",
+		"Language Packs",
+		"Machine Learning",
+		"Other"
+	],
+	"keywords": [
+		"node.js",
+		"express.js",
+		"giphy",
+		"giphy-backend",
+		"giphy-api",
+		"mongodb",
+		"website"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/FlicLabs/giphy-dashboard-backend"
+	},
+	"prisma": {
+		"schema": "./src/prisma/schema.prisma"
+	},
+	"engineStrict": true,
+	"engines": {
+		"node": "^18.18.0"
+	},
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon index.js",
+		"prisma:pull": "prisma db pull",
+		"prisma:push": "prisma db push",
+		"prisma:format": "prisma format",
+		"prisma:studio": "prisma studio",
+		"prisma:generate": "prisma generate",
+		"prisma:validate": "prisma validate",
+		"prettier:format": "prettier --write ./**/*.{js,ts,json}"
+	},
+	"dependencies": {
+		"@prisma/client": "^5.0.0",
+		"axios": "^1.7.5",
+		"chromedriver": "^128.0.0",
+		"colors": "^1.4.0",
+		"cors": "^2.8.5",
+		"dotenv": "^16.3.1",
+		"express": "^4.18.2",
+		"jsonwebtoken": "^9.0.1",
+		"lodash": "^4.17.21",
+		"mocha": "^10.4.0",
+		"module-alias": "^2.2.3",
+		"node-cron": "^3.0.2",
+		"papaparse": "^5.4.1",
+		"prettier": "^3.0.0",
+		"prisma": "^5.18.0",
+		"selenium-webdriver": "^4.19.0"
+	},
+	"devDependencies": {
+		"nodemon": "^3.1.4"
+	}
+}
