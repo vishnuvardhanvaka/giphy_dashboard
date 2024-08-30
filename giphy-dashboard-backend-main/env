@@ -1,0 +1,7 @@
+ENCRYPT_IV='ePb09rel8jB7aFU5'
+ENCRYPT_KEY='uEptuIn1epOZ1WuUBoKxpcLxb5cpwZUr'
+JWT_SECRET='indhtaSHOXOAjT8uPdfAnQnOkSUuxCDTfCgbqMwQSMc5EpXcaTzDxW9BzghYVFpY'
+DATABASE_URL='mysql://root:vishnu1$@localhost:3306/giphydashboard'
+# DATABASE_URL='mysql://giphydashboard:JE%3D3%7C9Co0fVj%3Cq8@localhost:3306/giphydashboard'
+# username=giphydashboard
+# password=<JE=3|9Co0fVj<q8
