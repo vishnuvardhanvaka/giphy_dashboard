@@ -1,0 +1,63 @@
+[
+	{
+		"id": "3WIZ165aIYNZ8yre1",
+		"type": "GIF",
+		"url": "https://giphy.com/gifs/3WIZ165aIYNZ8yre1",
+		"views": [
+			{
+				"date": "2023-07-10",
+				"value": 5690078
+			}
+		],
+		"engages": {
+			"savetheworld": [
+				{
+					"date": "2023-07-10",
+					"value": 50
+				}
+			],
+			"shelterhumanity": [
+				{
+					"date": "2023-07-10",
+					"value": 70
+				}
+			],
+			"cryptotrading": [
+				{
+					"date": "2023-07-10",
+					"value": 72
+				}
+			],
+			"sheltercoins": [
+				{
+					"date": "2023-07-10",
+					"value": 0
+				}
+			],
+			"sheltercrypto": [
+				{
+					"date": "2023-07-10",
+					"value": 15
+				}
+			],
+			"shelternft": [
+				{
+					"date": "2023-07-10",
+					"value": 63
+				}
+			],
+			"shelter": [
+				{
+					"date": "2023-07-10",
+					"value": 86
+				}
+			],
+			"humanity": [
+				{
+					"date": "2023-07-10",
+					"value": 35
+				}
+			]
+		}
+	}
+]

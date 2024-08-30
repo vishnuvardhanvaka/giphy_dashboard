@@ -1,0 +1,23 @@
+[
+	{
+		"id": "1",
+		"path": "/",
+		"name": "GIF Charts",
+		"icon": "fluent:document-bullet-list-24-regular",
+		"menu": []
+	},
+	{
+		"id": "2",
+		"path": "/top-gifs",
+		"name": "Top GIFs",
+		"icon": "solar:chart-line-duotone",
+		"menu": []
+	},
+	{
+		"id": "3",
+		"path": "/about-us",
+		"name": "About Us",
+		"icon": "fluent:info-24-regular",
+		"menu": []
+	}
+]

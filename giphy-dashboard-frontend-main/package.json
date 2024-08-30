@@ -1,0 +1,80 @@
+{
+	"name": "giphy-dashboard-frontend",
+	"private": true,
+	"version": "1.0.0",
+	"type": "module",
+	"license": "LICENSE",
+	"readme": "README.md",
+	"markdown": "github",
+	"publisher": "@pmfoysal",
+	"description": "A Modern Rich Featured Giphy Dashboard!",
+	"author": {
+		"name": "Foysal Ahmmed",
+		"email": "pmfoysal@gmail.com",
+		"url": "https://github.com/pmfoysal"
+	},
+	"categories": [
+		"Programming Languages",
+		"Data Science",
+		"Education",
+		"Language Packs",
+		"Machine Learning",
+		"Other"
+	],
+	"keywords": [
+		"react.js",
+		"vite",
+		"giphy",
+		"react-giphy",
+		"giphy-api",
+		"dashboard",
+		"website"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/FlicLabs/giphy-dashboard-frontend.git"
+	},
+	"engineStrict": true,
+	"engines": {
+		"node": "^18.18.0"
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"format": "prettier --write ./**/*.{js,jsx,ts,tsx,json,css,scss}",
+		"lint": "eslint src --ext js,jsx,ts,tsx --report-unused-disable-directives"
+	},
+	"dependencies": {
+		"@emotion/react": "^11.11.1",
+		"@emotion/styled": "^11.11.0",
+		"@iconify/react": "^4.1.1",
+		"@mui/material": "^5.13.6",
+		"@reduxjs/toolkit": "^1.9.5",
+		"lodash": "^4.17.21",
+		"papaparse": "^5.4.1",
+		"pretty-bytes": "^6.1.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-redux": "^8.1.1",
+		"react-router-dom": "^6.13.0",
+		"react-toastify": "^9.1.3",
+		"recharts": "^2.7.2"
+	},
+	"devDependencies": {
+		"@types/react": "^18.0.37",
+		"@types/react-dom": "^18.0.11",
+		"@vitejs/plugin-react-swc": "^3.0.0",
+		"autoprefixer": "^10.4.14",
+		"eslint": "^8.38.0",
+		"eslint-plugin-react": "^7.32.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.3.4",
+		"postcss": "^8.4.24",
+		"postcss-nesting": "^11.3.0",
+		"prettier": "^2.8.8",
+		"react-loader-spinner": "^5.3.4",
+		"tailwindcss": "^3.3.2",
+		"vite": "^4.3.9"
+	}
+}
