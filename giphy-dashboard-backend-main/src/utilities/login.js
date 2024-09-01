@@ -6,7 +6,7 @@ module.exports = async (driver, email, pass, signUp = false) => {
 	await driver.findElement(By.css('input[type="email"]')).sendKeys(email);
 	await driver.findElement(By.css('input[type="password"]')).sendKeys(pass);
 	await driver.findElement(By.css('button[type="submit"]')).click();
-
+	let foundModel=true;
 	try {
 		const modal = await driver.wait(
 			until.elementLocated(By.css('div[class*=ModalWindow] div[class*=CloseButton]')),
@@ -16,7 +16,8 @@ module.exports = async (driver, email, pass, signUp = false) => {
 		await modal.click();
 		console.log('Modal closed successfully.');
 	} catch (error) {
-		console.log('Modal not found or failed to close, trying to click the save button.');
+		foundModel=false;
+		console.log('Modal not found or failed to close, trying to click the save button.',error);
 
 		try {
 			const saveButton = await driver.wait(
@@ -39,8 +40,8 @@ module.exports = async (driver, email, pass, signUp = false) => {
 			);
 			const imgElement = await containerDiv.findElement(By.css('img[src*="avatars"]'));
 			const imgSrc = await imgElement.getAttribute('src');
-			// console.log('Image src found:', imgSrc);
-			return imgSrc;
+			console.log('Image src found:', imgSrc);
+			return {'avatarUrl':imgSrc,'activeAccount':foundModel};
 		} catch (error) {
 			console.error('Failed to locate the image with avatars in the src:', error.message);
 			return null;

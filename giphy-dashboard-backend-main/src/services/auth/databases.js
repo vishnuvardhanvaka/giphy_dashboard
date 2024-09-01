@@ -9,15 +9,26 @@ module.exports.signup = async user => {
 	const driver = await getDriver();
 	try {
 		const prev = await db.user.findUnique({ where: { email: user.email } });
-		console.log(prev,'this is the login user data')
+		// console.log(prev,'this is the login user data')
 		if (prev?.email) throw new Error('Already registered an account with this Email');
-		const avatarUrl=await login(driver, user.email, user.password,signUp=true);
+		const giphyLoginResponse=await login(driver, user.email, user.password,signUp=true);
+		console.log(giphyLoginResponse)
 		console.log('login successfull')
 		const { password, ...data } = await db.user.create({
-			data: { ...user,image:avatarUrl, password: encrypt(user.password) },
+			data: { ...user,image:giphyLoginResponse.avatarUrl,activeAccount:giphyLoginResponse.activeAccount, password: encrypt(user.password) },
 		});
-		syncOneGiphy({ ...data, password });
-		console.log('syncOneGiphy is implemented...')
+		// (async () => {
+		// 	try {
+		// 		await syncOneGiphy({ ...data, password });
+		// 		console.log('syncOneGiphy is implemented...');
+		// 	} catch (error) {
+		// 		console.error('Failed to sync Giphy:', error.message);
+		// 	}
+		// })();
+		if(giphyLoginResponse.activeAccount){
+			syncOneGiphy({ ...data, password });
+			console.log('syncOneGiphy is implemented...')
+		}
 		return data;
 	} catch (error) {
 		throw new Error(error.message);
@@ -31,7 +42,6 @@ module.exports.signin = async user => {
 	if (!temp?.email) throw new Error('No user found with this Email');
 	const { password, ...data } = temp;
 	if (user.password !== decrypt(password)) throw new Error("Your password didn't matched");
-
 	return {
 		...data,
 		token: jwt.sign({ email: data.email }, process.env.JWT_SECRET, {

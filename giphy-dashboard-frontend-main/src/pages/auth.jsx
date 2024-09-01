@@ -8,7 +8,7 @@ export default function Auth({ type, user }) {
 	const navigate = useNavigate();
 	const { pathname } = useLocation();
 	const [name, setName] = useState('');
-	const [image, setImage] = useState({});
+	// const [image, setImage] = useState({});
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [disabled, setDisabled] = useState(true);
@@ -20,34 +20,34 @@ export default function Auth({ type, user }) {
 		if (path !== pathname) navigate(path);
 	}
 
-	function handleChooseFile() {
-		const input = document.createElement('input');
-		input.type = 'file';
-		input.accept = 'image/*';
-		input.oninput = e => setImage(e.target.files[0]);
-		input.click();
-	}
+	// function handleChooseFile() {
+	// 	const input = document.createElement('input');
+	// 	input.type = 'file';
+	// 	input.accept = 'image/*';
+	// 	input.oninput = e => setImage(e.target.files[0]);
+	// 	input.click();
+	// }
 
-	function handleRemoveFile() {
-		setImage({});
-	}
+	// function handleRemoveFile() {
+	// 	setImage({});
+	// }
 
-	async function uploadImage() {
-		const formData = new FormData();
-		formData.append('file', image);
-		formData.append('path', 'giphy-studio');
-		const res = await fetch('https://s3api.prodemic.org/api/upload/avatar', { method: 'POST', body: formData });
-		const data = await res.json();
-		return data?.data?.url;
-	}
+	// async function uploadImage() {
+	// 	const formData = new FormData();
+	// 	formData.append('file', image);
+	// 	formData.append('path', 'giphy-studio');
+	// 	const res = await fetch('https://s3api.prodemic.org/api/upload/avatar', { method: 'POST', body: formData });
+	// 	const data = await res.json();
+	// 	return data?.data?.url;
+	// }
 
 	function isValid() {
 		if (type === 'signup') {
 			const nameOk = name.trim().length > 0;
-			const imageOk = image.size > 0;
+			// const imageOk = image.size > 0;
 			const emailOk = email.trim().length > 0;
 			const passwordOk = password.length > 0;
-			return nameOk && imageOk && emailOk && passwordOk;
+			return nameOk && emailOk && passwordOk;
 		} else {
 			const emailOk = email.trim().length > 0;
 			const passwordOk = password.length > 0;
@@ -67,7 +67,8 @@ export default function Auth({ type, user }) {
 	async function handleSignup() {
 		setDisabled(true);
 		if (isValid()) {
-			const url = await uploadImage();
+			// const url = await uploadImage();
+			const url='';
 			signup({ name, email, image: url, password }).unwrap();
 		} else {
 			toast.warning('Please provide required values!');
@@ -77,7 +78,7 @@ export default function Auth({ type, user }) {
 	useEffect(() => {
 		if (isValid()) setDisabled(false);
 		else setDisabled(true);
-	}, [name, email, image, password, pathname]);
+	}, [name, email, password, pathname]);
 
 	useEffect(() => {
 		if (user?.email) navigate('/');
@@ -111,7 +112,7 @@ export default function Auth({ type, user }) {
 									value={name}
 									onChange={e => setName(e.target.value)}
 								/>
-								<div className='uploader'>
+								{/* <div className='uploader'>
 									<input
 										className='input'
 										type='text'
@@ -122,7 +123,7 @@ export default function Auth({ type, user }) {
 									<button onClick={image.size ? handleRemoveFile : handleChooseFile}>
 										{image.size ? 'Remove' : 'Choose'}
 									</button>
-								</div>
+								</div> */}
 							</Fragment>
 						) : null}
 						<input

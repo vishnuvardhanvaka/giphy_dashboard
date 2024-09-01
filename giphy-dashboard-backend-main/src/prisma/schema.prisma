@@ -13,6 +13,8 @@ model User {
   image     String    @db.Char(255)
   email     String    @unique @db.Char(128)
   password  String    @db.Char(255)
+  activeAccount Boolean   @default(true)
+  syncingData Boolean   @default(false)
   contents  Content[]
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt

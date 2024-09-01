@@ -5,7 +5,7 @@ const { Builder, Capabilities } = require('selenium-webdriver');
 module.exports = async path => {
 	const chromeOptions = new chrome.Options();
 
-	chromeOptions.addArguments('--headless');
+	// chromeOptions.addArguments('--headless');
 	chromeOptions.addArguments('--start-maximized');
 	// chromeOptions.setChromeBinaryPath('/snap/bin/chromium');
 	// chromeOptions.setChromeBinaryPath('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe');

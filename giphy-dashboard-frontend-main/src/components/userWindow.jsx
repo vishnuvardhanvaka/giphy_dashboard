@@ -28,8 +28,9 @@ export default function UserWindow({ user, isOpen, setIsOpen }) {
 	return (
 		<div className={`user-window ${isOpen ? 'active' : null}`}>
 			<img className='userimage' src={user.image} alt={user.name} />
-			<h3 className='username'>{user.name}</h3>
+			<h3 className='username text-green-500'>{user.name}</h3>
 			<p className='useremail'>{user.email}</p>
+			{!user.activeAccount && <div className='flex items-center justify-center text-red-500 text-sm'><Icon icon='ci:info' className='mr-1' />Inactive giphy account.</div>}
 			<div className='options'>
 				{isMobile ? (
 					<Fragment>
@@ -57,3 +58,4 @@ export default function UserWindow({ user, isOpen, setIsOpen }) {
 		</div>
 	);
 }
+
